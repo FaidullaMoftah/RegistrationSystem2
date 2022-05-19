@@ -1,0 +1,5 @@
+implement bst of students, comparator is equals();
+implement student, and basic classes
+implement basic socket that can send and receive packets
+implement birthday input checking
+fix payment date

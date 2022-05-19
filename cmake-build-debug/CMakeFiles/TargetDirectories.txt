@@ -1,0 +1,3 @@
+C:/Users/faidu/CLionProjects/RegistrationSystem/cmake-build-debug/CMakeFiles/RegistrationSystem.dir
+C:/Users/faidu/CLionProjects/RegistrationSystem/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/faidu/CLionProjects/RegistrationSystem/cmake-build-debug/CMakeFiles/rebuild_cache.dir
