@@ -1,18 +1,14 @@
 #include "LinkedList.h"
-#ifndef student
+#ifndef STUDENT_H
 #include "../StudentData/Student.h"
 #endif
-#include "../StudentData/Id.h"
 #include "stdlib.h"
-
-void initList(struct list* l) {
-	l->head = NULL;
-	l->size = 0;
-}
-void initNode(node* n, struct student* s)
-{
-	n->data = s;
-	n->next = 0;
+list* init(student* s){
+    node* n = (node *) malloc(sizeof (student));
+    list* l = (list *)malloc(sizeof(list));
+    l->head = n;
+    l->insert = &ListInsert;
+    return l;
 }
 void ListInsert(list* l, student *s){
 	node* n = (node *)(malloc(sizeof(n)));

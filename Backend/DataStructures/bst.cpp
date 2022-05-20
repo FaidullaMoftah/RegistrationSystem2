@@ -38,7 +38,11 @@ void insert(BinarySearchTree *tree , Node *node){
     }
 
 };
+void insertStudent(BinarySearchTree *tree , student *s){
+    Node* n = (Node *)malloc(sizeof(Node));
+    n->value = s;
 
+}
 Node* minimumElement(Node *root){
     if (root->leftChild == NULL)
     {
@@ -57,7 +61,7 @@ Node* maximumElement(Node *root){
 
 };
 
-Node* TreeSearch(struct Node *root, Id* value){
+Node* TreeSearch(Node *root, Id* value){
     if (root == NULL || compare(root->value->getId(), value) == 0)
     {
         return root;
@@ -69,7 +73,7 @@ Node* TreeSearch(struct Node *root, Id* value){
     return TreeSearch(root->rightChild, value);
 };
 
-// Returns the successor of a node where a sucessor is defined as the next node in a list sorted ascendingly by node value
+// Returns the successor of a node where a sucessor is defined as the next node in a list sorted ascendingly  by node value
 Node* successor(Node *node){
     if (node->rightChild != NULL)
     {
@@ -101,7 +105,7 @@ Node* predecessor(Node *node){
     return x;
 };
 
-void printOrderedTree(Node *root){
+void printOrderedTree(Node* root){
     if (root != NULL)
     {
         printOrderedTree(root->leftChild);
@@ -129,7 +133,7 @@ void transplant(BinarySearchTree *tree, Node *n1, Node *n2){
         n2->parent = n1->parent;
     }
 }
-void _delete(BinarySearchTree *tree, Node *n){
+void deleteNode(BinarySearchTree *tree, Node *n){
     if (n->leftChild == NULL)
     {
         transplant(tree, n, n->rightChild);

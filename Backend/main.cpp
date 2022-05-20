@@ -1,5 +1,6 @@
 #include <iostream>
 //#include "Tester.h"
+#include "DataStructures/LinkedList.h"
 #include "DataStructures/bst.h"
 int main(int argc, char const *argv[])
 {
@@ -27,6 +28,5 @@ int main(int argc, char const *argv[])
     for(int i = 0; i < 20;i++){
         st4->id.value[i] = (char) ('0' + rand() * 10);
     }
-    printf("%s", st4->id.value);
-    printOrderedTree(bst->root);
+    insertStudent(bst, st1);
 }

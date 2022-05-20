@@ -1,4 +1,5 @@
 #include "Id.h"
+#define STUDENT_H
 //#include "Name.h"
 //#include "Address.h"
 //#include "Payment.h"

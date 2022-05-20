@@ -1,4 +1,6 @@
+#ifndef student
 #include "../StudentData/Student.h"
+#endif
 #include "../StudentData/Id.h"
 struct Hashtable{
     int size;
@@ -8,5 +10,5 @@ struct Hashtable{
 };
 Hashtable *newHashtable(int size);
 void insert(student* s);
-student* search(Id id);
+student* search(Hashtable *t, Id* id);
 void _delete(student * del);

@@ -1,5 +1,5 @@
 #include "Hashtable.h"
-#include "stdlib.h"
+#include "cstdlib"
 #include "LinkedList.h"
 #include "bst.h"
 //Creates and initializes a new hashtable, with linked lists
@@ -16,7 +16,7 @@ Hashtable *newHashtable(int sz, int Threshold) {
     return Table;
 };
 void insert(Hashtable *t, student* s){
-    int index = s->getId().hashValue;
+    int index = s->getId()->hashValue;
     if(t->aboveThreshold[index] == 0)
     {
         list* add = (list*)t->table[index];
@@ -32,10 +32,10 @@ student* search(Hashtable *t, Id* id){
     if(t->aboveThreshold[index] == 0)
     {
         list* add = (list*)t->table[index];
-        searchInList(add, id);
+        return searchInList(add, id)->data;
     }
     else{
         BinarySearchTree* add = (BinarySearchTree*)t->table[index];
-        TreeSearch(add->root, id);
+        return TreeSearch(add->root, id)->value;
     }
 }
