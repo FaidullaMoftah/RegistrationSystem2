@@ -21,6 +21,8 @@ int main(int argc, char const *argv[])
     insert(h,st1);
     insert(h,st2);
     insert(h,st3);
-    printf("%d",search(h, st2->getId())->getId()->hashValue);
+    student* st = search(h, st2->getId());
+    if(st != NULL)
+    printf("%d",st->getId()->hashValue);
 
 }
