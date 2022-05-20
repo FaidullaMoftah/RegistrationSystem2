@@ -1,4 +1,4 @@
-/*#include "Hashtable.h"
+#include "Hashtable.h"
 #include "cstdlib"
 #include "LinkedList.h"
 #include "bst.h"
@@ -40,4 +40,4 @@ student* search(Hashtable *t, Id* id){
     }
 }
 void _delete(student *del){
-}*/
+}

@@ -2,6 +2,8 @@
 //#include "Tester.h"
 #include "DataStructures/LinkedList.h"
 #include "DataStructures/bst.h"
+#include "DataStructures/Hashtable.h"
+#define MOD 29
 int main(int argc, char const *argv[])
 {
     student* st1 = new student();
@@ -13,11 +15,12 @@ int main(int argc, char const *argv[])
     student* st4 = new student();
     generateRandomId(st4->getId());
 
-    BinarySearchTree* tree = newBinarySearchTree(st1);
-    insertStudent(tree, st2);
-    insertStudent(tree, st3);
-    insertStudent(tree, st4);
+    Hashtable* h = newHashtable(MOD, 5);
+    hash(st2->getId(), MOD);
 
-    printOrderedTree(tree->root);
-    int k = 0;
+    insert(h,st1);
+    insert(h,st2);
+    insert(h,st3);
+    printf("%d",search(h, st2->getId())->getId()->hashValue);
+
 }

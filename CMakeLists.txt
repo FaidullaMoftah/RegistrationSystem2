@@ -22,6 +22,8 @@ add_executable(RegistrationSystem
         Backend/StudentData/Student.h
         Backend/DataStructures/bst.cpp
         Backend/DataStructures/bst.h
+        Backend/DataStructures/LinkedList.cpp
+        Backend/DataStructures/LinkedList.h
         Backend/DataStructures/Hashtable.cpp
         Backend/DataStructures/Hashtable.h
         Backend/server.cpp

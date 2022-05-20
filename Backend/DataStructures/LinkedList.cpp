@@ -28,7 +28,7 @@ node* searchInList(list* l, Id* item){
 	struct node* current = l->head;
 	while (current != NULL)
 	{
-		if(compare(current -> data -> id, item) == 0)current = current->next;
+		if(compare(&(current -> data -> id), item) == 0)current = current->next;
 		else return current;
 	}
 	return NULL;

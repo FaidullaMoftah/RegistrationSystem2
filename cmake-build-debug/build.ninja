@@ -103,6 +103,12 @@ build CMakeFiles/RegistrationSystem.dir/Backend/DataStructures/bst.cpp.obj: CXX_
   OBJECT_DIR = CMakeFiles\RegistrationSystem.dir
   OBJECT_FILE_DIR = CMakeFiles\RegistrationSystem.dir\Backend\DataStructures
 
+build CMakeFiles/RegistrationSystem.dir/Backend/DataStructures/LinkedList.cpp.obj: CXX_COMPILER__RegistrationSystem_Debug C$:/Users/faidu/CLionProjects/RegistrationSystem/Backend/DataStructures/LinkedList.cpp || cmake_object_order_depends_target_RegistrationSystem
+  DEP_FILE = CMakeFiles\RegistrationSystem.dir\Backend\DataStructures\LinkedList.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\RegistrationSystem.dir
+  OBJECT_FILE_DIR = CMakeFiles\RegistrationSystem.dir\Backend\DataStructures
+
 build CMakeFiles/RegistrationSystem.dir/Backend/DataStructures/Hashtable.cpp.obj: CXX_COMPILER__RegistrationSystem_Debug C$:/Users/faidu/CLionProjects/RegistrationSystem/Backend/DataStructures/Hashtable.cpp || cmake_object_order_depends_target_RegistrationSystem
   DEP_FILE = CMakeFiles\RegistrationSystem.dir\Backend\DataStructures\Hashtable.cpp.obj.d
   FLAGS = -g -std=gnu++20
@@ -129,7 +135,7 @@ build CMakeFiles/RegistrationSystem.dir/Backend/main.cpp.obj: CXX_COMPILER__Regi
 #############################################
 # Link the executable RegistrationSystem.exe
 
-build RegistrationSystem.exe: CXX_EXECUTABLE_LINKER__RegistrationSystem_Debug CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Id.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Name.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Address.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Date.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Payment.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/StudentContact.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Marks.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Student.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/DataStructures/bst.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/DataStructures/Hashtable.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/server.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/main.cpp.obj
+build RegistrationSystem.exe: CXX_EXECUTABLE_LINKER__RegistrationSystem_Debug CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Id.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Name.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Address.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Date.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Payment.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/StudentContact.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Marks.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/StudentData/Student.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/DataStructures/bst.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/DataStructures/LinkedList.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/DataStructures/Hashtable.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/server.cpp.obj CMakeFiles/RegistrationSystem.dir/Backend/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\RegistrationSystem.dir
