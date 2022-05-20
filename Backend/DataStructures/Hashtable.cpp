@@ -1,4 +1,4 @@
-#include "Hashtable.h"
+/*#include "Hashtable.h"
 #include "cstdlib"
 #include "LinkedList.h"
 #include "bst.h"
@@ -20,7 +20,7 @@ void insert(Hashtable *t, student* s){
     if(t->aboveThreshold[index] == 0)
     {
         list* add = (list*)t->table[index];
-        ListInsert(add, s);
+        ListInsertStudent(add, s);
     }
     else{
         BinarySearchTree* add = (BinarySearchTree*)t->table[index];
@@ -39,3 +39,5 @@ student* search(Hashtable *t, Id* id){
         return TreeSearch(add->root, id)->value;
     }
 }
+void _delete(student *del){
+}*/

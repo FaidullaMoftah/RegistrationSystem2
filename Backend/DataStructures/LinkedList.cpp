@@ -3,6 +3,7 @@
 #include "../StudentData/Student.h"
 #endif
 #include "stdlib.h"
+#include "../StudentData/Id.h"
 list* init(student* s){
     node* n = (node *) malloc(sizeof (student));
     list* l = (list *)malloc(sizeof(list));
@@ -10,9 +11,16 @@ list* init(student* s){
     l->insert = &ListInsert;
     return l;
 }
-void ListInsert(list* l, student *s){
-	node* n = (node *)(malloc(sizeof(n)));
-    initNode(n, s);
+node* createNode(student* s){
+    node* n = (node*)malloc(sizeof(node));
+    n->data = s;
+    return n;
+};
+void ListInsertStudent(list *l, student *s){
+    node* n = createNode(s);
+    ListInsert(l, n);
+}
+void ListInsert(list* l, node *n){
     n->next = l->head;
 	l->head = n;
 }
