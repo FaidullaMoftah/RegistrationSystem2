@@ -1,4 +1,6 @@
 #include "Id.h"
+#include "stdio.h"
+#include "cstdlib"
 int compare(struct Id* id1,struct Id* id2) {
 	for (int i = 0; i < 20; i++)
 	{
@@ -23,4 +25,16 @@ int hash(struct Id* id, int mod){
         factor %= mod;
     }
     return sum % mod;
+}
+void printId(Id* id) {
+    for (int i = 0; i < 20; i++)
+        printf("%c", (id->value)[i]);
+    printf("\n");
+}
+void generateRandomId(Id *id){
+    for(int i = 0; i < 20;i++)
+    {
+        int currentChar = (char)('0' +  (rand()* 10) / RAND_MAX);
+        (id->value)[i] = currentChar;
+    }
 }

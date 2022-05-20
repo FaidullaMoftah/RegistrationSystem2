@@ -8,7 +8,7 @@ void student::setName(const Name &name) {
     student::name = name;
 }
 */
-Id* student::getId()  {
+Id * student::getId()  {
     return &id;
 }/*3
 

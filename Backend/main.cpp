@@ -4,29 +4,20 @@
 #include "DataStructures/bst.h"
 int main(int argc, char const *argv[])
 {
-    BinarySearchTree* bst = (BinarySearchTree *)malloc(sizeof(BinarySearchTree));
-    student* st1 = (student *)malloc(sizeof(student));
-    st1->id.value = (char *)calloc(20, sizeof(char));
-    for(int i = 0; i < 20;i++){
-        st1->id.value[i] = (char) ('0' + rand() * 10);
-    }
-    printf("%s", st1->id.value);
-    student* st2 = (student *)malloc(sizeof(student));
-    st2->id.value = (char *)calloc(20, sizeof(char));
-    for(int i = 0; i < 20;i++){
-        st2->id.value[i] = (char) ('0' + rand() * 10);
-    }
-    printf("%s", st1->id.value);
-    student* st3 = (student *)malloc(sizeof(student));
-    st3->id.value = (char *)calloc(20, sizeof(char));
-    for(int i = 0; i < 20;i++){
-        st3->id.value[i] = (char) ('0' + rand() * 10);
-    }
-    printf("%s", st1->id.value);
-    student* st4 = (student *)malloc(sizeof(student));
-    st4->id.value = (char *)calloc(20, sizeof(char));
-    for(int i = 0; i < 20;i++){
-        st4->id.value[i] = (char) ('0' + rand() * 10);
-    }
-    insertStudent(bst, st1);
+    student* st1 = new student();
+    generateRandomId(st1->getId());
+    student* st2 = new student();
+    generateRandomId(st2->getId());
+    student* st3 = new student();
+    generateRandomId(st3->getId());
+    student* st4 = new student();
+    generateRandomId(st4->getId());
+
+    BinarySearchTree* tree = newBinarySearchTree(st1);
+    insertStudent(tree, st2);
+    insertStudent(tree, st3);
+    insertStudent(tree, st4);
+
+    printOrderedTree(tree->root);
+    int k = 0;
 }

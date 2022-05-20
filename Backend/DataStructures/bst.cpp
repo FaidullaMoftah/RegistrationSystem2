@@ -1,6 +1,7 @@
 #include "cstdlib"
 #include "stdio.h"
 #include "bst.h"
+#include "../StudentData/Id.h"
 Node* newNode(student* s){
     Node* node = (Node*) malloc(sizeof(Node));
     node->value = s;
@@ -9,14 +10,15 @@ Node* newNode(student* s){
     node->parent = NULL;
     return node;
 };
-void insert(BinarySearchTree *tree , Node *node){
+/*void insert(BinarySearchTree *tree , Node *node){
     Node *y = NULL;
     Node *x = tree->root;
 
     while (x != NULL)
     {
         y = x;
-        if (compare(node->value->getId(), x->value->getId()) == -1)
+        int res = compare(node->value->getId(), x->value->getId());
+        if (res == -1)
         {
             x = x->leftChild;
         }
@@ -37,11 +39,25 @@ void insert(BinarySearchTree *tree , Node *node){
         y->rightChild = node;
     }
 
-};
+};*/
+Node* insert(Node* root, Node* n){
+    if(root == NULL){
+        root = n;
+        return root;
+    }
+    int res = compare(n->value->getId(), root->value->getId());
+    if(res == 1) {
+        //then the new node lies on the right of me
+        root->rightChild = insert(root->rightChild, n);
+    }
+    else if(res == -1){
+        root->leftChild = insert(root->leftChild, n);
+    }
+}
 void insertStudent(BinarySearchTree *tree , student *s){
-    Node* n = (Node *)malloc(sizeof(Node));
+    Node* n = newNode(s);
     n->value = s;
-
+    insert(tree->root, n);
 }
 Node* minimumElement(Node *root){
     if (root->leftChild == NULL)
@@ -109,7 +125,7 @@ void printOrderedTree(Node* root){
     if (root != NULL)
     {
         printOrderedTree(root->leftChild);
-        printf("%s ",*root->value->getId());
+        printId(root->value->getId());
         printOrderedTree(root->rightChild);
     }
 };
@@ -159,9 +175,9 @@ void deleteNode(BinarySearchTree *tree, Node *n){
 
 }
 
-struct BinarySearchTree* newBinarySearchTree(int num){
+BinarySearchTree* newBinarySearchTree(student* s){
     struct BinarySearchTree *tree = (BinarySearchTree *)malloc(sizeof(BinarySearchTree));
-    tree->root = newNode(num);
+    tree->root = newNode(s);
     return tree;
 };
 
