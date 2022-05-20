@@ -32,7 +32,7 @@ student* search(Hashtable *t, Id* id){
     if(t->aboveThreshold[index] == 0)
     {
         list* add = (list*)t->table[index];
-        return searchInList(add, id)->data;
+        return (student *)searchInList(add, id)->data;
     }
     else{
         BinarySearchTree* add = (BinarySearchTree*)t->table[index];
