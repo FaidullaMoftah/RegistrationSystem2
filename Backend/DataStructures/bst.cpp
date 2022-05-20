@@ -40,24 +40,25 @@ Node* newNode(student* s){
     }
 
 };*/
-Node* insert(Node* root, Node* n){
-    if(root == NULL){
-        root = n;
+Node** insert(Node** root, Node* n){
+    if(*root == NULL){
+        root = &n;
         return root;
     }
-    int res = compare(n->value->getId(), root->value->getId());
+    int res = compare(n->value->getId(), (*root)->value->getId());
     if(res == 1) {
         //then the new node lies on the right of me
-        root->rightChild = insert(root->rightChild, n);
+        (*root)->rightChild = *insert(&(*root)->rightChild, n);
     }
     else if(res == -1){
-        root->leftChild = insert(root->leftChild, n);
+        (*root)->leftChild = *insert(&(*root)->leftChild, n);
     }
+    return root;
 }
 void insertStudent(BinarySearchTree *tree , student *s){
     Node* n = newNode(s);
     n->value = s;
-    insert(tree->root, n);
+    insert(&tree->root, n);
 }
 Node* minimumElement(Node *root){
     if (root->leftChild == NULL)
