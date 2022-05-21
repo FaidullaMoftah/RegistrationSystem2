@@ -1,28 +1,51 @@
 #include <iostream>
 //#include "Tester.h"
 #include "DataStructures/LinkedList.h"
+#include "server.h"
 #include "DataStructures/bst.h"
 #include "DataStructures/Hashtable.h"
 #define MOD 29
 int main(int argc, char const *argv[])
 {
-    student* st1 = new student();
-    generateRandomId(st1->getId());
-    student* st2 = new student();
-    generateRandomId(st2->getId());
-    student* st3 = new student();
-    generateRandomId(st3->getId());
-    student* st4 = new student();
-    generateRandomId(st4->getId());
+    WSADATA wsadata;
+    int initResult = WSAStartup(MAKEWORD(2, 2), &wsadata);
 
-    Hashtable* h = newHashtable(MOD, 5);
-    hash(st2->getId(), MOD);
+    if (initResult != 0) {
+        printf("init failed! \n");
+        printf("%d\n", initResult);
+    } else printf("success\n");
+    struct addrinfo *result = NULL,
+            *ptr = NULL,
+            hints;
 
-    insert(h,st1);
-    insert(h,st2);
-    insert(h,st3);
-    student* st = search(h, st2->getId());
-    if(st != NULL)
-    printf("%d",st->getId()->hashValue);
-
+    ZeroMemory( &hints, sizeof(hints) );
+    hints.ai_family = AF_UNSPEC;
+    hints.ai_socktype = SOCK_STREAM;
+    hints.ai_protocol = IPPROTO_TCP;
+    initResult = getaddrinfo(argv[1], DEFAULT_PORT, &hints, &result);
+    if (initResult != 0) {
+        printf("getaddrinfo failed: %d\n", initResult);
+        WSACleanup();
+        return 1;
+    }
+    SOCKET ConnectSocket = INVALID_SOCKET;
+    ptr=result;
+    ConnectSocket = socket(ptr->ai_family, ptr->ai_socktype,
+                           ptr->ai_protocol);
+    if (ConnectSocket == INVALID_SOCKET) {
+        printf("Error at socket(): %ld\n", WSAGetLastError());
+        freeaddrinfo(result);
+        WSACleanup();
+        printf("misery\n");
+    }
+    initResult = connect( ConnectSocket, ptr->ai_addr, (int)ptr->ai_addrlen);
+    if (initResult== SOCKET_ERROR) {
+        closesocket(ConnectSocket);
+        ConnectSocket = INVALID_SOCKET;
+    }
+    freeaddrinfo(result);
+    if (ConnectSocket == INVALID_SOCKET) {
+        printf("Unable to connect to server!\n");
+        WSACleanup();
+    }
 }

@@ -90,7 +90,7 @@ Node* TreeSearch(Node *root, Id* value){
     return TreeSearch(root->rightChild, value);
 };
 
-// Returns the successor of a node where a sucessor is defined as the next node in a list sorted ascendingly  by node value
+// Returns the successor of a node where a successor is defined as the next node in a list sorted ascendingly  by node value
 Node* successor(Node *node){
     if (node->rightChild != NULL)
     {

@@ -1,9 +1,14 @@
 #include "Id.h"
 #define STUDENT_H
-//#include "Name.h"
-//#include "Address.h"
-//#include "Payment.h"
-
+#include "Name.h"
+#include "Address.h"
+#include "Payment.h"
+#include "StudentContact.h"
+#include "CreditHours.h"
+#include "GPA.h"
+#include "Course.h"
+#include "Faculty.h"
+#include "Department.h"
 //Student is still to be decided whether to be used as a class or struct
 #ifndef MALE
 #define MALE 0
@@ -13,26 +18,28 @@
 #endif
 class student{
 public:
-   //Name name;
-   Id id;
-   /*std::string nationality;
-   Address address;
-   Address mailAddress;
-   Date birthDate;
-   int age;
-   std::string gender;
-   int enrolTerm;
-   int year;
-   std::string tutor_name;
-   int code;
-   int currentTerm;
-   Payment* payments;
-   StudentContact studentContact;
-   CreditHours creditHours;
-   GPA studentGPA;
-   Course* courses;
-   Faculty faculty;
-   Department department;
+    int studentNum;
+    std::string password;
+    Name name;
+    Id id;
+    std::string nationality;
+    Address address;
+    Address mailAddress;
+    Date birthDate;
+    int age;
+    std::string gender;
+    int enrolTerm;
+    int year;
+    std::string tutor_name;
+    int code;
+    int currentTerm;
+    Payment* payments;
+    StudentContact studentContact;
+    CreditHours creditHours;
+    GPA studentGPA;
+    Course courses[150];
+    Faculty faculty;
+    Department department;
 public:
     const Name &getName() const;
 
@@ -122,8 +129,5 @@ public:
 
     void setPassword(const std::string &password);
 
-private:
-    int studentNum;
-   std::string password;*/
     Id*  getId();
 };
