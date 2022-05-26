@@ -1,4 +1,4 @@
-
+#define DATE_H
 class Date{
     int year;
     int month;

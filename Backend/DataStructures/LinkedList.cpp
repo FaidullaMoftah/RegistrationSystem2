@@ -28,8 +28,32 @@ node* searchInList(list* l, Id* item){
 	struct node* current = l->head;
 	while (current != NULL)
 	{
-		if(compare(&(current -> data -> id), item) == 0)current = current->next;
+		if(compare((current -> data -> getId()), item) != 0)current = current->next;
 		else return current;
 	}
 	return NULL;
+}
+void deleteNode(node** head_ref, int key)
+{
+
+    node* temp = *head_ref;
+    node* prev = NULL;
+    if (temp != NULL && temp->data == key)
+    {
+        *head_ref = temp->next;
+        delete temp;
+        return;
+    }
+    else
+    {
+        while (temp != NULL && temp->data != key)
+        {
+            prev = temp;
+            temp = temp->next;
+        }
+        if (temp == NULL)
+            return;
+        prev->next = temp->next;
+        delete temp;
+    }
 }

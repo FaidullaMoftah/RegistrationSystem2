@@ -1,20 +1,17 @@
 #include "Student.h"
-/*
-const Name &student::getName() const {
-    return name;
-}
 
-void student::setName(const Name &name) {
-    student::name = name;
-}
-*/
+student::student(Name* n, std::string nation, Date* d){
+    this->name = n;
+    this->nationality = nation;
+    this->birthDate = d;
+    this->address = NULL;
+    this->id = newId(*d, 1,1, 1);
+};
+
 Id * student::getId()  {
-    return &id;
-}/*3
-
-void student::setId(const Id &id) {
-    student::id = id;
+    return id;
 }
+/*
 
 const std::string &student::getNationality() const {
     return nationality;
@@ -136,14 +133,6 @@ void student::setStudentGpa(const GPA &studentGpa) {
     studentGPA = studentGpa;
 }
 
-Course *student::getCourses() const {
-    return courses;
-}
-
-void student::setCourses(Course *courses) {
-    student::courses = courses;
-}
-
 const Faculty &student::getFaculty() const {
     return faculty;
 }
@@ -174,4 +163,5 @@ const std::string &student::getPassword() const {
 
 void student::setPassword(const std::string &password) {
     student::password = password;
-}*/
+}
+*/

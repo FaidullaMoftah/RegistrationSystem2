@@ -13,6 +13,7 @@ Hashtable *newHashtable(int sz, int Threshold) {
     }
     Table->threshold = Threshold;
     Table->aboveThreshold = (int *)calloc(sz, sizeof(int));
+    Table->aboveThreshold;
     return Table;
 };
 void insert(Hashtable *t, student* s){
@@ -39,5 +40,12 @@ student* search(Hashtable *t, Id* id){
         return TreeSearch(add->root, id)->value;
     }
 }
-void _delete(student *del){
+void _delete(Hashtable* h, student *del){
+    if(h->aboveThreshold[del->getId()->hashValue] == 0)
+    {
+
+    }
+    else{
+
+    }
 }

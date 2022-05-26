@@ -1,4 +1,5 @@
 #include "string"
+#define ADDRESS_H
 class Address {
     int flatNumber;
 public:

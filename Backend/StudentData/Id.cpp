@@ -1,5 +1,10 @@
 #include "Id.h"
+#ifndef DATE_H
 #include "Date.h"
+#endif
+#ifndef MOD
+#define MOD 29
+#endif
 #include "stdio.h"
 #include "cstdlib"
 Id* newId(Date d, int faculty, int major, int serial){
@@ -12,6 +17,8 @@ Id* newId(Date d, int faculty, int major, int serial){
     id->value[3] = (char)((d.getMonth()/10)%10 + '0');
     id->value[4] = (char)(d.getDay()%10 + '0');
     id->value[5] = (char)((d.getDay()/10)%10 + '0');
+    int m = MOD;
+    hash(id, m);
     return id;
 }
 int compare(struct Id* id1,struct Id* id2) {

@@ -1,8 +1,14 @@
 #include "Id.h"
 #define STUDENT_H
+#ifndef NAME_H
 #include "Name.h"
+#endif
+#ifndef ADDRESS_H
 #include "Address.h"
+#endif
+#ifndef PAYMENT_H
 #include "Payment.h"
+#endif
 #include "StudentContact.h"
 #include "CreditHours.h"
 #include "GPA.h"
@@ -17,15 +23,14 @@
 #define FEMALE 0
 #endif
 class student{
-public:
     int studentNum;
     std::string password;
-    Name name;
-    Id id;
+    Name* name;
+    Id* id;
     std::string nationality;
-    Address address;
-    Address mailAddress;
-    Date birthDate;
+    Address* address;
+    Address* mailAddress;
+    Date* birthDate;
     int age;
     std::string gender;
     int enrolTerm;
@@ -34,13 +39,15 @@ public:
     int code;
     int currentTerm;
     Payment* payments;
-    StudentContact studentContact;
-    CreditHours creditHours;
-    GPA studentGPA;
-    Course courses[150];
-    Faculty faculty;
-    Department department;
+    StudentContact* studentContact;
+    CreditHours* creditHours;
+    GPA* studentGPA;
+    int courseCount;
+    Course* courses[150];
+    Faculty* faculty;
+    Department* department;
 public:
+    student(Name* n, std::string nation, Date* d);
     const Name &getName() const;
 
     void setName(const Name &name);
